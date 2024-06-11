@@ -19,7 +19,7 @@ in JavaScript for people who want to write _**more reliable code**_.
 The Vending Machine example is _intentionally_ simple
 so you can focus on the principles of testing.
 Once you understand the basics,
-we encourage you to follow our _complete_ Todo List Tutorial 
+we encourage you to follow another _complete_ Todo List Tutorial 
 ([https://github.com/dwyl/**todo-list-javascript-tutorial**](https://github.com/dwyl/todo-list-javascript-tutorial)),
 which is a step-by-step guide to building an App
 following testing and documentation-first best practices._
