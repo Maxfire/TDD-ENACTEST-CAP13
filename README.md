@@ -654,12 +654,6 @@ If you see this:
 
 _**Congratulations! You can do Test Driven Development**_ (TDD)!! <br />
 
-Give yourself a pat on the back! **Tweet your _success_**! <br />
-_or **Re-Tweet**_: https://twitter.com/livelifelively/status/768645514120212480
-[![learn-tdd](https://cloud.githubusercontent.com/assets/194400/18021179/91827edc-6bdd-11e6-8ae5-082181c0d789.png)](https://twitter.com/livelifelively/status/768645514120212480)
-
-_Take a break, grab some water and come back for the #**BonusLevel**_
-
 <br />
 - - -
 <br />
