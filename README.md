@@ -13,119 +13,6 @@ in JavaScript for people who want to write _**more reliable code**_.
 
 </div>
 
-## Why?
-
-_Project(s) without tests_ often end up looking like they are stuck together with _**duct tape**_ ...
-
-![duct tape car fail](https://i.imgur.com/9cNriGK.jpg)
-
-Change _one_ part and _another_ stops working? "_Fixing_" one bug, creates another?
-
-Wouldn't you *prefer* it if everything was
-***consistent*** and beautifully integrated? <br />
-What if _everyone_ on your team worked _like **clock-work**_ in a disciplined order... like a _**Formula 1 Crew**_ ...
-
-![formula 1 pit stop](https://i.imgur.com/0NDbaam.jpg)
-
-Test Driven Development (TDD) makes your team a well-oiled machine which means you can go _**faster**_.
-
-Once you have a ***suite*** of tests that run on every change, you will
-begin to develop a whole other level of ***confidence*** in your codebase
-and will discover a new freedom to be ***creative*** without fear of
-"*breaking*" anything unexpectedly; truly *game-changing*.
-
-
-## What?
-
-This tutorial will help you get started with
-**T**est **D**riven **D**evelopment (**TDD**) *today*! <br />
-In the next ***30 minutes*** you will learn _everything_<sup>1</sup>
-you need to write tests for your web project!
-
-### Pre-Requisites
-
-+ **A computer** with a web browser
-+ **Internet access** to download the starter files
-+ **30 minutes** of your time
-+ **_Basic_ Programming Skills** (HTML & JavaScript)
-+ (_**Optional**_) _**Bonus Levels requires**_ you to
-[_install_ **Node.js**](https://nodejs.org/download/)
-
-### What is Software Testing?
-> Software testing is the process of evaluating a software item to detect differences between the expected output and the actual output. Testing assesses the quality of the product. Software testing is a process that should be done during the development process. In other words software testing is a verification and validation process.
-
-
-### What is TDD?
-
-> Test-driven development (TDD) is an evolutionary approach to development
-which combines test-first development, where you write a test before you write
-just enough production code to fulfil that test, and refactoring. In other words,
-it’s one way to think through your requirements
-or design before you write your functional code.
-
-*From [Introduction to Test Driven Development (TDD)](https://agiledata.org/essays/tdd.html)*
-
-#### Further resources
-- Software Testing - https://en.wikipedia.org/wiki/Software_testing
-- "What is Software Testing" video (from 5:56 onwards) - https://youtu.be/UZy1Dj9JIg4?t=356
-- Video intro to Software Development Lifecycle (from 0:52 onwards): https://youtu.be/qMkV_TDdDeA?t=52
-- How to Write Clean, Testable Code -  https://youtu.be/XcT4yYu_TTs (ignore the Java code focus on the general principles)
-+ [What is software testing?](https://www.codeproject.com/Tips/351122/What-is-software-testing-What-are-the-different-ty) by _Rehman Zafar_
-<!-- - Practical Full-Stack JavaScript Web Application Test Driven Development - https://github.com/nelsonic/practical-js-tdd -->
-
-## How?
-
-The *first* thing you need to *understand*
-is that writing code following TDD (*discipline*)
-is a (*slightly*) different approach from simply
-diving into solving the problem (*without a test*).
-
-When reading about TDD you will usually see the expression:
-"***Red, Green, Refactor***":
-
-![TDD Cycle: Red, Green, Refactor](https://i.imgur.com/RQe2NQT.jpg)
-
-What this means is that TDD follows a **3-step process**:
-
-1. ***Write a Failing Test*** - Understand the (user)
-requirements/story well enough to write a test for what you expect.
-(_the test should **fail** initially - hence it being "Red"_)
-
-2. ***Make the (failing) Test Pass*** - Write (*only*) the code you need
-to make the (*failing*) test pass, while ensuring your existing/previous tests
-all still pass (*no regressions*).
-
-3. ***Refactor the code you wrote*** take the time to tidy up the code
-*you* wrote to make it simpler
-(*for your future self or colleagues to understand*)
-before you need to ship the current feature, do it.
-
-> Thankfully, because you will have good tests,
-you don't _need_ to do any refactoring up-front,
-you can always do refactoring _later_
-if performance bottlenecks are discovered.
-Most programming languages have very efficient compilers/interpreters
-that remove much of the need for refactoring.
-And if you use a linter your code will be naturally "tidy".
-
-To develop the *habit(s)* you will need to be successful with TDD
-(*and software engineering in general*)
-we need to ***write*** a ***test first*** (*and watch it fail*)
-and *then* write the code required to make the test pass.
-
-Writing a _**failing test**_,
-before writing the code may seem *counter-intuitive*,
-*time consuming* or even "*tedious*" at _**first**_.
-But we _urge_ you to think of it this way:
-
-> The ***test*** is the ***question*** you are asking <br />
-> your code is the ***answer*** to the question. <br />
-> By having a _clear_ question, you can always check
-> that your code is working, <br />
-> because it _**consistently**_
-> gives you the same answer(s) ... _no surprises_,
-even when you're working with a large, inter-dependent code base!
-
 ## Practical
 
 > _**Note**: This tutorial is meant to be a beginner-friendly introduction to TDD.
@@ -1057,43 +944,6 @@ to your readme file e.g:
 [![codecov.io](https://codecov.io/github/dwyl/learn-tdd/coverage.svg?branch=master)](https://codecov.io/github/dwyl/learn-tdd?branch=master)
 to show others that you *care* about testing.
 
-## Bonus Level 3: _Continuous Integration_ (5 mins)
-
-If you are new to **Continuous Integration** (**CI** _in general_)
-or **Travis CI** check out our tutorial:
-https://github.com/docdis/learn-travis
-
-To quickly add CI support to your project:
-
-**1**)  **Visit**: https://travis-ci.org/profile and **Login**
-with your **GitHub account** <br />
-**2**)  Enable Travis for your project
-(_**Note**_: The project will need to be hosted on GitHub)
-
-![learn-tdd-enable-travis-ci](images/enable-travis-ci.png)
-
-**3**)  Add a **.travis.yml** file to your project's root directory
-and include the following lines in it:
-
-```sh
-language: node_js
-node_js:
-  - "node"
-```
-**4**)  Ensure that you have a **package.json** file
-with **test** script. <br />
-(_if in doubt, just copy-paste the **package.json** from this project!_)
-
-**5**)  **Commit** your changes and **push** them to GitHub <br />
-**6**)  Visit the page on Travis-CI for your project. e.g: https://travis-ci.org/dwyl/learn-tdd
-to see the build results.
-
-![learn-tdd-build-passing-summary](images/build-passing-summary.png)
-
-![learn-tdd-build-passing](images/build-passing.png)
-
-Done. [![Build Status](https://travis-ci.org/dwyl/learn-tdd.svg)](https://travis-ci.org/dwyl/learn-tdd)
-
 <br />
 
 ## Bonus Level 4: _Documentation_ with [JSDoc](https://github.com/jsdoc3/jsdoc) (5 mins)
@@ -1149,19 +999,7 @@ In the last **90 minutes** you _**learned how**_ to:
 + Use **JSDoc** to generate documentation for your code after writing simple comment blocks
 above your functions.
 
-> _Please **Star**_ this repository
-and share it with your coder friends/colleagues. <br />
-> _Help us_ spread the TDD Love by ***re-tweeting***:
-https://twitter.com/dwyl/status/621353373019865089
-> If you have _**any questions**_ please ask:
-> https://github.com/dwyl/learn-tdd/issues
-
 - - -
-
-<sup>1</sup>Ok, its not *really* possible to learn "everything" in 30 mins...
-but you'll certainly know *most* of what you need!
-And, if you have *any questions*, _**please ask**_ at:
-https://github.com/dwyl/learn-tdd/issues
 
 <br />
 
@@ -1187,7 +1025,4 @@ following TDD best-practice from start to finish.
 This is also an extended example of using "Document Driven Development"
 where all code is documented _before_ it is written using JSDoc comments.
 
-# Interested in Contributing?
-_**Please read** our_
-[**contribution guide**](https://github.com/dwyl/contributing)
 (_thank you_!)
