@@ -506,7 +506,7 @@ The _**Arthur Andersen Approach**_ gets results in the *short run* ...
 But it's arguably *more work* than simply *solving* the problem.
 So let's do that instead.
 
-# Try It Yourself (_before looking at the solution_!)
+# Try It Yourself
 
 > Try to create your own `getChange` method that passes the three tests
 > _before_ you look at the solution...
@@ -560,98 +560,6 @@ When these tests pass, your work is done.
 
 <br />
 <br />
-
-## Solution(s) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/learn-tdd/issues)
-
-_**Note**_: Feel free to suggest a more _compact_ algorithm.
-
-### "Imperative" Version ("Two For Loops")
-
-```javascript
-var coins = [200, 100, 50, 20, 10, 5, 2, 1]
-function getChange (payable, paid) {
-  var change = [];
-  var length = coins.length;
-  var remaining = paid - payable; // we reduce this below
-
-  for (var i = 0; i < length; i++) { // loop through array of notes & coins:
-    var coin = coins[i];
-
-    var times_coin_fits = Math.floor(remaining / coin); // no partial coins
-    if(times_coin_fits >= 1) { // check coin fits into the remaining amount
-
-      for(var j = 0; j < times_coin_fits ; j++) { // add coin to change x times
-        change.push(coin);
-        remaining = remaining - coin;  // subtract coin from remaining
-      }
-    }
-  }
-  return change;
-};
-```
-
-### "Functional"
-
-The "functional" solution is more _compact_ than the "nested for loops": <br />
-
-```js
-const COINS = [200, 100, 50, 20, 10, 5, 2, 1]; // "constant" of all coins
-function getChange (payable, paid) {
-  return COINS.reduce((change, coin) => {
-    const change_sum = change.reduce((sum, coin) => sum + coin, 0);
-    const remaining = paid - payable - change_sum;
-    const times_coin_fits = Math.floor(remaining / coin);
-    return change.concat(Array(times_coin_fits).fill(coin));
-  }, []); // change array starts out empty and gets filled iteratively.
-}
-```
-
-Don't panic if you are _unfamiliar_ with the JavaScript
-`Array.Map` & `Array.Reduce` methods;
-they were new to everyone _once_.
-
-We recommend reading:
-
-+ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Map
-+ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
-+ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill
-+ Example Functional JavaScript: https://www.sitepoint.com/map-reduce-functional-javascript
-+ [Mostly Adequate Guide To Functional Programming](https://github.com/MostlyAdequate/mostly-adequate-guide)
-
-
-
-### Alternative Solution
-
-An alternative shared by @blunket:
-
-```javascript
-var cointypes  = [200, 100, 50, 20, 10, 5, 2, 1];
-function getChange(price, paid) {
-  var difference = paid - price;
-  var change = [];
-
-  cointypes.forEach(function(coin) {
-    // keep adding the current coin until it's more than the difference
-    while (difference >= coin) {
-      change.push(coin);
-      difference = difference - coin;
-    }
-  });
-
-  return change;
-}
-```
-
-If you see this:
-
-![learn-tdd-showing-all-passing-tests](images/showing-all-passing-tests.png)
-
-_**Congratulations! You can do Test Driven Development**_ (TDD)!! <br />
-
-<br />
-- - -
-<br />
-
 
 ## Bonus Level 1: Code Coverage (10 mins)
 
