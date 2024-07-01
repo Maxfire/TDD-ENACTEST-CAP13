@@ -30,6 +30,35 @@ test('getChange(12, 400) should return [200, 100, 50, 20, 10, 5, 2, 1]', functio
   var expected = [200, 100, 50, 20, 10, 5, 2, 1];
   assert.deepEqual(result, expected);
 });
+test('getChange(0, 0) should return [] - no change needed', function(assert) {
+  var result = getChange(0, 0);
+  var expected = [];
+  assert.deepEqual(result, expected);
+});
+
+test('getChange(100, 100) should return [] - exact change given', function(assert) {
+  var result = getChange(100, 100);
+  var expected = [];
+  assert.deepEqual(result, expected);
+});
+
+test('getChange(321, 321) should return [] - exact change given', function(assert) {
+  var result = getChange(321, 321);
+  var expected = [];
+  assert.deepEqual(result, expected);
+});
+
+test('getChange(743, 1000) should return [200, 50, 5, 2] - various denominations used', function(assert) {
+  var result = getChange(743, 1000);
+  var expected = [200, 50, 5, 2];
+  assert.deepEqual(result, expected);
+});
+
+test('getChange(1, 999) should return [200, 200, 200, 200, 100, 50, 20, 10, 5, 2, 1] - large amount of change', function(assert) {
+  var result = getChange(1, 999);
+  var expected = [200, 200, 200, 200, 100, 50, 20, 10, 5, 2, 1];
+  assert.deepEqual(result, expected);
+});
 
 /* istanbul ignore next */
 if (typeof module !== 'undefined' && module.exports) { QUnit.load(); } // run the tests
