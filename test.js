@@ -25,6 +25,12 @@ test('getChange(486, 600) should equal [100, 10, 2, 2]', function(assert) {
   assert.deepEqual(result, expected);
 });
 
+test('getChange(610, 600) should equal [100, 10, 2, 2]', function(assert) {
+  var result = getChange(610, 600);
+  var expected = "pago insuficiente";
+  assert.deepEqual(result, expected);
+});
+
 test('getChange(12, 400) should return [200, 100, 50, 20, 10, 5, 2, 1]', function(assert) {
   var result = getChange(12, 400);
   var expected = [200, 100, 50, 20, 10, 5, 2, 1];
