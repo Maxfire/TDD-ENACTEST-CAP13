@@ -7,29 +7,55 @@ if (typeof module !== 'undefined' && module.exports) { // check we're server-sid
   var getChange = require('./change.js'); // load our getChange method
 }
 
-test('getChange(1,1) should equal [] - an empty array', function(assert) {
-  var result = getChange(1, 1); //no change/coins just an empty array
+// test('getChange(1,1) should equal [] - an empty array', function(assert) {
+//   var result = getChange(1, 1); //no change/coins just an empty array
+//   var expected = [];
+//   assert.deepEqual(result, expected);
+// });
+
+// test('getChange(215, 300) should return [50, 20, 10, 5]', function(assert) {
+//   var result = getChange(215, 300); // expect an array containing [50,20,10,5]
+//   var expected = [50, 20, 10, 5];
+//   assert.deepEqual(result, expected);
+// });
+
+// test('getChange(486, 600) should equal [100, 10, 2, 2]', function(assert) {
+//   var result = getChange(486, 600);
+//   var expected = [100, 10, 2, 2];
+//   assert.deepEqual(result, expected);
+// });
+
+// test('getChange(12, 400) should return [200, 100, 50, 20, 10, 5, 2, 1]', function(assert) {
+//   var result = getChange(12, 400);
+//   var expected = [200, 100, 50, 20, 10, 5, 2, 1];
+//   assert.deepEqual(result, expected);
+// });
+
+//Mis Tests
+test('getChange(3, 3) should equal [] - an empty array', function(assert) {
+  var result = getChange(3, 3); // no change/coins just an empty array
   var expected = [];
   assert.deepEqual(result, expected);
 });
 
-test('getChange(215, 300) should return [50, 20, 10, 5]', function(assert) {
-  var result = getChange(215, 300); // expect an array containing [50,20,10,5]
-  var expected = [50, 20, 10, 5];
+test('getChange(123, 200) should return [50, 20, 5, 2]', function(assert) {
+  var result = getChange(123, 200); // expect an array containing [50, 20, 5, 2]
+  var expected = [50, 20, 5, 2];
   assert.deepEqual(result, expected);
 });
 
-test('getChange(486, 600) should equal [100, 10, 2, 2]', function(assert) {
-  var result = getChange(486, 600);
-  var expected = [100, 10, 2, 2];
+test('getChange(321, 500) should equal [100, 50, 20, 5, 2, 2]', function(assert) {
+  var result = getChange(321, 500);
+  var expected = [100, 50, 20, 5, 2, 2];
   assert.deepEqual(result, expected);
 });
 
-test('getChange(12, 400) should return [200, 100, 50, 20, 10, 5, 2, 1]', function(assert) {
-  var result = getChange(12, 400);
-  var expected = [200, 100, 50, 20, 10, 5, 2, 1];
+test('getChange(1, 50) should return [20, 20, 5, 2, 2]', function(assert) {
+  var result = getChange(1, 50);
+  var expected = [20, 20, 5, 2, 2];
   assert.deepEqual(result, expected);
 });
+
 
 /* istanbul ignore next */
 if (typeof module !== 'undefined' && module.exports) { QUnit.load(); } // run the tests
