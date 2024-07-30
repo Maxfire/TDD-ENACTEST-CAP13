@@ -31,5 +31,23 @@ test('getChange(12, 400) should return [200, 100, 50, 20, 10, 5, 2, 1]', functio
   assert.deepEqual(result, expected);
 });
 
+test('getChange(55, 400) should return [200, 100, 50, 20, 10, 5, 2, 1]', function(assert) {
+  var result = getChange(55, 400);
+  var expected = [200, 100, 20, 20, 5];
+  assert.deepEqual(result, expected);
+});
+
+test('getChange(82, 500) should return [200, 100, 50, 20, 10, 5, 2, 1]', function(assert) {
+  var result = getChange(82, 400);
+  var expected = [200, 100, 10, 5, 2, 1];
+  assert.deepEqual(result, expected);
+});
+
+test('getChange(450, 1280) should return [200, 100, 50, 20, 10, 5, 2, 1]', function(assert) {
+  var result = getChange(450, 1280);
+  var expected = [200, 200, 200, 200, 20, 10];
+  assert.deepEqual(result, expected);
+});
+
 /* istanbul ignore next */
 if (typeof module !== 'undefined' && module.exports) { QUnit.load(); } // run the tests
